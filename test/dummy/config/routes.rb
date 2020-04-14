@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  mount Alchemy::Crop::Image::Engine => "/alchemy-crop-image"
+
+  mount Alchemy::Crop::Image::Engine => "/"
+  mount Alchemy::Engine => '/'
+
+
 end

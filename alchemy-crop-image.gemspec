@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = Alchemy::Crop::Image::VERSION
   spec.authors     = ["Alessandro Baccanelli"]
   spec.email       = ["alessandro.baccanelli@archimedianet.it"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of Alchemy::Crop::Image."
-  spec.description = "TODO: Description of Alchemy::Crop::Image."
+  spec.homepage    = ""
+  spec.summary     = "A gem for enable image cropping in Alchemy Library"
+  spec.description = "With this gem you can crop and resize images directly in Alchemy Library and create a new verison of image"
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 6.0.2", ">= 6.0.2.2"
+  spec.add_dependency "alchemy_cms", "~> 4.5"
+  spec.add_dependency "webpacker", "~> 5.0", ">= 5.0.1"
 
   spec.add_development_dependency "sqlite3"
 end

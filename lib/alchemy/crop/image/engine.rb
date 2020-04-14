@@ -1,3 +1,4 @@
+require "alchemy_cms"
 module Alchemy
   module Crop
     module Image
