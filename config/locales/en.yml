@@ -1,0 +1,19 @@
+en:
+  alchemy:
+    alchemy_crop_image:
+      enable_cropping: "Enable editing"
+      cancel: "Cancel"
+      save_crop: "Save as new Image"
+
+      cropping_actions:
+        move_image: "Move image"
+        crop_image: "Crop image"
+
+      height_crop: Height
+      width_crop: Width
+
+      you_can_select_a_preset_ratio_for_cropping: You can select a cropping box's preset ratio.
+      preset_crop_ratio_none: None
+
+
+
