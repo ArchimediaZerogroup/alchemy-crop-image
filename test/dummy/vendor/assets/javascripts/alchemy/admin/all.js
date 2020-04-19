@@ -9,3 +9,4 @@
 // about supported directives.
 //
 //= require alchemy/admin
+//= require alchemy/crop/image/application
