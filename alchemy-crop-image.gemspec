@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 6.0.2", ">= 6.0.2.2"
   spec.add_dependency "alchemy_cms", "~> 4.5"
   spec.add_dependency "webpacker", "~> 5.0", ">= 5.0.1"
+  spec.add_dependency "sprockets-rails", "2.3.3"
 
   spec.add_development_dependency "sqlite3"
 end
