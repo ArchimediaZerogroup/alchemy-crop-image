@@ -1,0 +1,85 @@
+<div class="crop-block">
+  <div class="block-button">
+    <button id="enable-crop">
+      <%= Alchemy.t(:enable_cropping, scope: :alchemy_crop_image) %>
+    </button>
+    <div class="buttons-action-crop">
+      <button id="button-cancel-crop">
+        <%= Alchemy.t(:cancel, scope: :alchemy_crop_image) %>
+      </button>
+      <button id="button-save-crop">
+        <%= Alchemy.t(:save_crop, scope: :alchemy_crop_image) %>
+      </button>
+    </div>
+  </div>
+  <div class="crop-panel">
+    <div class="block-command">
+      <div class="btn-group">
+        <button type="button" id="drag-image" class="cropper-action direct-action">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="<%= Alchemy.t(:move_image, scope: [:alchemy_crop_image, :cropping_actions]) %>">
+              <span class="fa fa-arrows-alt"></span>
+            </span>
+        </button>
+        <button id="crop-zoom-in" type="button" class="btn btn-primary cropper-action direct-action">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="">
+              <span class="fa fa-search-plus"></span>
+            </span>
+        </button>
+        <button id="crop-zoom-out" type="button" class="btn btn-primary cropper-action direct-action">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="">
+              <span class="fa fa-search-minus"></span>
+            </span>
+        </button>
+      </div>
+
+
+      <div class="btn-group isolated">
+        <button type="button" id="preview-image" class="cropper-action">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="<%= Alchemy.t(:crop_image, scope: [:alchemy_crop_image, :cropping_actions]) %>">
+              <span class="fa fa-eye"></span>
+            </span>
+        </button>
+      </div>
+
+
+    </div>
+    <div class="block-info">
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1"><%= Alchemy.t(:width_crop, scope: :alchemy_crop_image) %></label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="field_width_crop">
+          <div class="input-group-append">
+            <span class="input-group-text">px</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1"><%= Alchemy.t(:height_crop, scope: :alchemy_crop_image) %></label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="field_height_crop">
+          <div class="input-group-append">
+            <span class="input-group-text">px</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="block-default-crop-size">
+      <div class="suggestion"><%= Alchemy.t(:you_can_select_a_preset_ratio_for_cropping, scope: :alchemy_crop_image) %></div>
+      <div class="btn-group">
+        <% Alchemy::Crop::Image::Configuration.available_preset_cropbox.each do |preset| %>
+          <button type="button" class="cropper-action-preset-ratio" data-value="<%= preset[:value] %>">
+            <span class="label-ratio"><%= preset[:label] %></span>
+          </button>
+        <% end %>
+        <button type="button" class="cropper-action-preset-ratio" data-value="NaN">
+          <span class="label-ratio"><%= Alchemy.t(:preset_crop_ratio_none, scope: :alchemy_crop_image)%></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
