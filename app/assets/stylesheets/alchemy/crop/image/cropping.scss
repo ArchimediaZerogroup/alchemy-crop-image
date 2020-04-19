@@ -1,0 +1,134 @@
+
+@import "alchemy/variables";
+$background_command: #214166;
+$color_command: #ffffff;
+
+
+.crop-block {
+  margin-top: 1rem;
+
+  #enable-crop, #button-save-crop{
+    background-color: $background_command;
+    color: $color_command;
+  }
+
+
+  .buttons-action-crop {
+    display: none;
+  }
+
+  .crop-panel {
+    display: none;
+  }
+
+  .block-command {
+    margin-top: 0.5rem;
+
+    .btn-group {
+      display: inline-block;
+      &.isolated{
+        margin-left: 15px;
+      }
+    }
+
+    .cropper-action {
+      padding: 0.55em 1.5em;
+      &.active {
+        color: red
+      }
+    }
+  }
+
+  .block-info {
+    margin-top: 0.5rem;
+
+    .form-group {
+      margin-bottom: 0.5rem;
+
+      label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        cursor: default;
+      }
+
+      .form-control {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        margin: auto;
+      }
+
+      .input-group {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+
+        .form-control {
+          position: relative;
+          flex: 1 1 auto;
+          width: 1%;
+          margin-bottom: 0;
+        }
+
+        .input-group-append {
+          margin-left: -1px;
+          display: flex;
+
+          .input-group-text {
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: .375rem .75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+      }
+
+    }
+  }
+
+  .block-default-crop-size {
+    margin-top: 1rem;
+
+    .cropper-action-preset-ratio {
+      &.active {
+        color: red;
+      }
+    }
+  }
+}
+
+.middle-box-for-cropping {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 0 8px rgba(51, 59, 81, 0.8);
+  background-color: #666666;
+  vertical-align: middle;
+  cursor: default;
+}
