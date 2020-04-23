@@ -15,5 +15,16 @@ en:
       you_can_select_a_preset_ratio_for_cropping: You can select a cropping box's preset ratio.
       preset_crop_ratio_none: None
 
+      cropped_image_not_saved: Cropped image not saved
+      cropped_image_succesfully_save: Cropped image saved succesfully
+
+      button_labels:
+        label_preview_image: Preview Image
+        label_crop_preset_none: No crop box preset
+        label_crop_preset: "Crop-box preset: %{preset}"
+        label_zoom_out: Zoom Out
+        label_zoom_in: Zoom In
+        label_drag_image: Drag Image
+
 
 
