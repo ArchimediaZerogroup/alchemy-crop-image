@@ -1,0 +1,30 @@
+it:
+  alchemy:
+    alchemy_crop_image:
+      enable_cropping: "Modifica"
+      cancel: "Annulla"
+      save_crop: "Salva nuova immagine"
+
+      cropping_actions:
+        move_image: "Trascina immagine"
+        crop_image: "Ritaglia immagine"
+
+      height_crop: Altezza
+      width_crop: Larghezza
+
+      you_can_select_a_preset_ratio_for_cropping: Puoi selezionare un rapporto predefinito per il riquadro di ritaglio.
+      preset_crop_ratio_none: Nessuno
+
+      cropped_image_not_saved: Immagine non salvata
+      cropped_image_succesfully_save: Immagine salvata correttamente
+
+      button_labels:
+        label_preview_image: Visualizza immagine
+        label_crop_preset_none: Nessun riquadro preselezionato
+        label_crop_preset: "Riquadro preselezionato: %{preset}"
+        label_zoom_out: Zoom -
+        label_zoom_in: Zoom +
+        label_drag_image: Trascina immagine
+
+
+
