@@ -114,12 +114,22 @@ $color_command: #ffffff;
   .block-default-crop-size {
     margin-top: 1rem;
 
+    .suggestion {
+      margin: 5px 0px;
+    }
+
     .cropper-action-preset-ratio {
       &.active {
         color: red;
       }
     }
   }
+
+
+  .button_with_label {
+    margin: 0px;
+  }
+
 }
 
 .middle-box-for-cropping {

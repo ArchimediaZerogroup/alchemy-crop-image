@@ -39,9 +39,11 @@ $(document).on("page:change turbolinks:load", function () {
 
     }
 
-    var onCrop = function(e){
-        $("#field_width_crop").val(e.detail.width)
-        $("#field_height_crop").val(e.detail.height)
+    var onCrop = function (e) {
+        var roundedWidth = Math.round(e.detail.width)
+        var roundedHeight = Math.round(e.detail.height)
+        $("#field_width_crop").val(roundedWidth)
+        $("#field_height_crop").val(roundedHeight)
     }
 
     var enableCropperWithOptions = function (options) {
@@ -109,7 +111,6 @@ $(document).on("page:change turbolinks:load", function () {
     }
 
 
-
     $(document).on("click", "#enable-crop", function () {
         showPanelCropping();
         enableCropperStructure();
@@ -134,7 +135,37 @@ $(document).on("page:change turbolinks:load", function () {
     })
 
     $(document).on("click", "#button-save-crop", function () {
-        //chiamata ajax per trasferire l'immagine
+
+        var imageContainer = $(".zoomed-picture-background")[0];
+        var originalPictureId = $(imageContainer).data("displayed-image-id");
+
+        if (cropper) {
+
+            //disable button for submit
+            $(this).prop("disabled", true)
+            $(this).attr("disabled", true)
+
+            var canvas = cropper.getCroppedCanvas();
+            if (canvas) {
+                canvas.toBlob(function (blob) {
+                    var formData = new FormData();
+                    var imgInfo = cropper.getCropBoxData()
+
+                    formData.append('picture[image_file]', blob);
+                    formData.append('image_info[width]', imgInfo.width);
+                    formData.append('image_info[height]', imgInfo.height);
+
+                    // Use `jQuery.ajax` method for example1
+                    $.ajax(Routes.alchemy_admin_picture_crop_path(originalPictureId), {
+                        method: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false
+                    });
+                });
+            }
+        }
+
     })
 
     $(document).on("click", "#drag-image", function () {
@@ -177,7 +208,7 @@ $(document).on("page:change turbolinks:load", function () {
                 $(previewBox).remove();
                 $(containerCropper).show()
 
-                $(buttonsActions).prop("disabled",false);
+                $(buttonsActions).prop("disabled", false);
                 $(buttonsActions).removeAttr("disabled");
 
 
@@ -195,14 +226,14 @@ $(document).on("page:change turbolinks:load", function () {
 
                 var thisButton = this;
 
-                cropper.getCroppedCanvas().toBlob(function(blob){
+                cropper.getCroppedCanvas().toBlob(function (blob) {
 
                     var urlCreator = window.URL || window.webkitURL;
                     var imageUrl = urlCreator.createObjectURL(blob);
-                    $(previewBox).append("<img src='"+ imageUrl +"'>");
+                    $(previewBox).append("<img src='" + imageUrl + "'>");
                     $(middlebox).append(previewBox);
 
-                    $(buttonsActions).prop("disabled",true);
+                    $(buttonsActions).prop("disabled", true);
                     $(buttonsActions).attr("disabled", true);
 
                     $(thisButton).addClass("active-no-change")
@@ -228,22 +259,19 @@ $(document).on("page:change turbolinks:load", function () {
         }
     })
 
-    $(document).on("click",".cropper-action-preset-ratio", function() {
-        if($(this).hasClass("active")){
+    $(document).on("click", ".cropper-action-preset-ratio", function () {
+        if ($(this).hasClass("active")) {
             $(this).removeClass("active");
-        }else {
+        } else {
             $(".cropper-action-preset-ratio").removeClass("active");
             var aspectRatioVal = $(this).data("value")
-            console.log(typeof aspectRatioVal)
-            if(cropper) {
+
+            if (cropper) {
                 cropper.setAspectRatio(aspectRatioVal)
             }
             $(this).addClass("active");
         }
     })
-
-
-
 
 
 })
