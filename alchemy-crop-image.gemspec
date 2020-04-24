@@ -32,4 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'js-routes', '~> 1.4', '>= 1.4.9'
 
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency 'alchemy-devise', '~> 4.5'
+  spec.add_development_dependency 'puma', '~> 3.11'
+  spec.add_development_dependency 'webpacker', '~> 4.0'
 end

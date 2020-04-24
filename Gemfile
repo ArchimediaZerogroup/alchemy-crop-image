@@ -13,8 +13,3 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-
-gem 'alchemy-devise', '~> 4.5'
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
-gem 'webpacker', '~> 5.0', '>= 5.0.1'
