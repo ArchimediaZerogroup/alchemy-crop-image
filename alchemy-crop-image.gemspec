@@ -9,25 +9,29 @@ Gem::Specification.new do |spec|
   spec.version     = Alchemy::Crop::Image::VERSION
   spec.authors     = ["Alessandro Baccanelli"]
   spec.email       = ["alessandro.baccanelli@archimedianet.it"]
-  spec.homepage    = ""
+  spec.homepage    = "https://github.com/ArchimediaZerogroup/alchemy-crop-image"
   spec.summary     = "A gem for enable image cropping in Alchemy Library"
   spec.description = "With this gem you can crop and resize images directly in Alchemy Library and create a new verison of image"
   spec.license     = "MIT"
 
+  spec.files       = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir      = "exe"
+  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
+
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org/"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
   end
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+
 
   spec.add_dependency "rails", ">= 5.2.0", "< 7.0.0"
   spec.add_dependency "alchemy_cms",">= 4.1"
-  #spec.add_dependency "webpacker", "~> 4.0",
   spec.add_dependency "sprockets-rails", "2.3.3"
   spec.add_dependency 'js-routes', '~> 1.4', '>= 1.4.9'
 
