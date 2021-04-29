@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 5.2.0", "< 7.0.0"
   spec.add_dependency "alchemy_cms",">= 4.1"
-  spec.add_dependency "sprockets-rails", "3.2.1"
+  spec.add_dependency "sprockets-rails", ">= 2.0.0"
   spec.add_dependency 'js-routes', '~> 1.4', '>= 1.4.9'
 
   spec.add_development_dependency "sqlite3"
