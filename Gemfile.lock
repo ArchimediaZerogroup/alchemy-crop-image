@@ -192,7 +192,8 @@ GEM
     polyamorous (2.3.2)
       activerecord (>= 5.2.1)
     public_suffix (4.0.4)
-    puma (3.12.4)
+    puma (5.5.1)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-proxy (0.6.5)
       rack
@@ -281,7 +282,7 @@ PLATFORMS
 DEPENDENCIES
   alchemy-crop-image!
   alchemy-devise (~> 4.5)
-  puma (~> 3.11)
+  puma (~> 5.5)
   sqlite3
   webpacker (~> 4.0)
 
